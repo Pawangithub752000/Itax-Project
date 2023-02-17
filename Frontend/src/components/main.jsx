@@ -12,7 +12,7 @@ export default function Main() {
 
   const addEmployeeToDB = async (employeeData) => {
     try {
-      await fetch(`http://localhost:8000/notes`, {
+      await fetch(`http://localhost:3002/employeeDetails`, {
         method: "POST",
         body: JSON.stringify(employeeData),
         headers: { "Content-Type": "application/json" },
@@ -28,7 +28,7 @@ export default function Main() {
     try {
       setLoading(true);
       let response = await fetch(
-        `http://localhost:8000/?page=${page}&limit=4`
+        `http://localhost:3002/employeeDetails?_page=${page}&_limit=4`
       );
       let result = await response.json();
       setAllEmployeeData(result);
