@@ -17,6 +17,7 @@ app.post('/notes', (req, res) => {
     user.save().then(() => {
         res.status(201).send(user);
     })
+    
 })
 
 
